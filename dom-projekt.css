@@ -1,0 +1,124 @@
+body
+{
+    transition-duration: 0.5s;
+    overflow-y: hidden;
+}
+
+#header
+{
+    /* Få headerns innehåll under varandra */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1vw;
+}
+
+#vibes
+{
+    /* Göm vibes headern från början */
+    display: none;
+    /* Responsiv textstorlek */
+    font-size: 2vw;
+}
+
+/* Time header som visar dagens datum och tid */
+#time
+{
+    /* Göm time headern från början */
+    display: none;
+    /* Responsiv textstorlek */
+    font-size: 1vw;
+}
+
+/* Responsiv bildstorlek */
+#myImage
+{
+    width: 15%;
+}
+
+/* Centrera knapparna */
+#btn_align
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+/* Knapparnas bakgrund */
+#btn_back
+{
+    background-color: beige;
+    width: 40vw;
+    height: 20vw;
+    /* För att göra det till flex */
+    display: flex;
+    /* Knapparna inte ska åka utanför bakgrunden */
+    flex-wrap: wrap;
+    /* För att få knappkolumnerna på rad */
+    flex-direction: row;
+    /* För att centrera */
+    justify-content: center;
+    align-content: center;
+}
+
+/* För att få knapparna under varandra */
+.column
+{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Alla knappar */
+button
+{
+    /* Bakgrundsfärg */
+    background-color: blue;
+    /* Knapparnas responsiva storlek */
+    width: 7vw;
+    height: 4.5vw;
+    /* Knapparnas margins */
+    margin-left: 3vw;
+    margin-right: 3vw;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+    /* Centrera text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Ge knapparna rundare hörn */
+    border-radius: 1vw;
+    /* Wrap för att texten ska stanna i knapparna */
+    flex-wrap: wrap;
+    /* Ta bort knapparnas border */
+    border: none;
+    /* Textfärg */
+    color: white;
+    /* Långsammare transition */
+    transition: 0.25s;
+
+}
+
+/* När man håller musen över knappen */
+button:hover
+{
+    /* Ändrar bakgrundsfärgen */
+    background-color: blueviolet;
+    /* Långsammare transition */
+    transition: 0.3s;
+}
+
+/* Centrera thanks */
+#thanks_alignment
+{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Färg och storlek på text */
+#thanks
+{
+    position: absolute;
+    bottom: 5%;
+    color: goldenrod;
+    display: none;
+}

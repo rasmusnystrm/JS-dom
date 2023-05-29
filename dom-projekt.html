@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOOM</title>
+    <link rel="stylesheet" href="dom-projekt.css">
+</head>
+
+<body>
+
+    <!-- Div för header -->
+    <div id="header">
+        
+        <h1 id="vibes">Be the best version of you!</h1>
+
+        <h3 id="time"></h3>
+
+        <img src="dog.jpg" id="myImage">
+    
+    </div>
+
+    <!-- Div för att centrera knapparnas container -->
+    <div id="btn_align">
+        
+        <!-- Div för knapparnas bakgrund och för att centrera knapparna -->
+        <div id="btn_back">
+
+            <!-- Div för en kolumn av knappar -->
+            <div class="column">
+
+                <button onclick="change_bg()">Change <br> Bg</button>
+                
+                <button onclick="good_vibes()">Good <br> vibes</button>
+                
+                <button onclick="time()">Time</button>
+
+            </div>
+
+            <!-- Div för en annan kolumn av knappar -->
+            <div class="column">
+
+                <button onclick="change_picture()">Change <br> picture</button>
+                
+                <button onclick="hide_picture()">Hide <br> picture</button>
+                
+                <button onclick="show_picture()">Show <br> picture</button>
+
+            </div>
+
+            <!-- Div för en till kolumn av knappar -->
+            <div class="column">
+
+                <button onclick="header()">Header</button>
+                
+                <button onclick="remove_header()">Remove <br> header</button>
+                
+                <button onclick="show_header()">Show <br> header</button>
+
+            </div>
+        </div>
+    </div>
+   
+    <!-- Div för att centrera thanks headern -->
+    <div id="thanks_alignment">
+
+        <h3 id="thanks"></h3>
+
+    </div>
+
+    <script>
+
+    // Funktion för "Change Bg" knappen. 
+    function change_bg()
+    {
+        // Skapa variabel för sidans bakgrundsfärg.
+        let color = document.body.style.backgroundColor;
+
+        // If-sats som säger att om bakgrunden på sidan är en viss färg byter den till en annan.
+        if(color == "white" || color == "")
+        {
+            document.body.style.backgroundColor = "lightblue";
+        }
+        else if(color == "lightblue")
+        {
+            document.body.style.backgroundColor = "darkmagenta";
+        }
+        else if(color == "darkmagenta")
+        {
+            document.body.style.backgroundColor = "red";
+        }
+        else if(color == "red")
+        {
+            document.body.style.backgroundColor = "darkblue";
+        }
+        else
+        {
+            document.body.style.backgroundColor = "white";
+        }
+        
+    }
+
+    // Funktion för "Good vibes" knappen. 
+    function good_vibes()
+    {
+        // Vibes variabel som hämtar värdet för "display" för elementet med id "vibes". 
+        let vibes = document.getElementById("vibes").style.display;
+
+        // If-sats som ändrar display om vibes inte har ett tilldelat värde. 
+        if(vibes == "" || vibes == "none")
+        {
+            document.getElementById("vibes").style.display = "block";
+        }
+        else
+        {
+            document.getElementById("vibes").style.display = "none";
+        }
+    }
+
+    // Funktion för "Time" knappen. 
+    function time()
+    {
+        // date variabel som tilldelas värdet Date() vilket är din dators tid och datum just nu. 
+        let date = Date();
+        
+        // Ändrar innehållet i "time" headern till date variabeln. 
+        document.getElementById("time").innerHTML = date;
+
+        // time_display variabel som hämtar värdet för "display" för elementet med id "time". 
+        let time_display = document.getElementById("time").style.display;
+
+        // If-sats som ändrar display om time_display inte har ett tilldelat värde. 
+        if(time_display == "none" || time_display == "")
+        {
+            document.getElementById("time").style.display = "block"
+        }
+        else
+        {
+            document.getElementById("time").style.display = "none"
+        }
+    }
+
+    // Funktion för "Change picture" knappen.
+    function change_picture() 
+    {
+        // bild variabel
+        var bild = document.getElementById("myImage");
+        
+        // If-sats som ändrar bild ifall bildens källa matchar med dog.jpg
+        if (bild.src.match("dog.jpg")) 
+        {
+            bild.src = "christer.jpeg";
+        } 
+        else 
+        {
+            bild.src = "dog.jpg";
+        }
+    }
+
+    // Funktion för "Hide picture" knappen. 
+    function hide_picture()
+    {
+        // Ändrar display till none
+        document.getElementById("myImage").style.display = "none";
+    }
+
+    // Funktion för "Show picture" knappen.
+    function show_picture()
+    {
+        // Ändrar display till block
+        document.getElementById("myImage").style.display = "block";
+    }
+
+    // Funktion för "Header" knappen.
+    function header()
+    {
+        // Byter bakgrundsfärg
+        document.getElementById("header").style.backgroundColor = "gray";
+        // Centrerar innehållet
+        document.getElementById("header").style.alignItems = "center";
+        // Byter display till block
+        document.getElementById("vibes").style.display = "block";
+        // Byter textfärg
+        document.getElementById("vibes").style.color = "white";
+        // Byter display till block
+        document.getElementById("time").style.display = "block";
+        // Förändrar datumet
+        document.getElementById("time").innerHTML = Date();
+        // Byter textfärg
+        document.getElementById("time").style.color = "white";
+        // Grön border runt bilden
+        document.getElementById("myImage").style.border = "1vw solid green";
+    }
+
+    // Funktion för "Remove Header" knappen.
+    function remove_header()
+    {
+        // Ändrar all display till none för att inte visa headern
+        document.getElementById("header").style.display = "none";
+        document.getElementById("vibes").style.display = "none";
+        document.getElementById("time").style.display = "none";
+        document.getElementById("myImage").style.display = "none";
+    }
+
+    // Funktion för "Show header" knappen.
+    function show_header()
+    {
+        // Ändrar all display till block för att visa headern igen
+        document.getElementById("header").style.display = "flex";
+        document.getElementById("vibes").style.display = "block";
+        document.getElementById("time").style.display = "block";
+        document.getElementById("myImage").style.display = "block";
+        // Tackmeddelande under knapparna. 
+        document.getElementById("thanks").innerHTML = "Thank you for visiting my website"
+        // Visa "thanks" header
+        document.getElementById("thanks").style.display = "block"; 
+    }
+
+    </script>
+
+</body>
+</html>
